@@ -1,0 +1,185 @@
+func hello (str who) {
+	println("hello, " + who); 
+}
+
+hello(who: "world!");
+
+class SomeClass {
+	con func default (str hey) {
+	  println(hey); 
+	}
+	
+	con pre op (§) void func default (par(str name, int count)) {
+	  println("hey $name, you are there $count times!");
+	} [global]
+
+	con pre op (§) void func default (int smth) {
+	  println("hey, its $(smth*2) times!");
+	} [global]
+
+}
+
+op ("§") int func hey (int a, int b) {
+	return a+b*b+a;
+}
+
+SomeClass someclass = § (name: "name", count: 10);
+
+SomeClass someOtherClass = new SomeClass(smth: "hey!");
+
+SomeClass someclass = § 10;
+
+int a = 10 §[hey] 5;	
+
+[0, 1, 2, 3, 4] => map (n) {n*2} => flat (n) {for x in {0..n} add(x)};
+
+(read)str readable = "you cant change me!";
+
+str normal = "but you can change ME";
+
+void func someFunc(str or int hey) {
+	println(hey);
+}
+
+ext(int) int func tripe(int i) {
+	return i * 3;
+}
+
+ext(int) int op (¨) func default (int a, int b) {
+	return a * b + b;
+}
+
+println(2.triple());
+println(2¨2);
+
+int func hmm (int x = 0) {
+	return x + 1;
+}
+
+type sometype = int;
+
+sometype x = 1;
+
+if(typeof(x) == int)
+	sometype = str; //x is cleared! to stop it from doing so, do this instead:
+//sometype = auto(str);
+
+x = "hey!";
+
+obj object = {
+	hey: "hola!",
+	hola: 1
+};
+
+class SomeWeirdClass : str, int {
+	typ(str > int) int func default (str inp) {
+		return int(inp.getBytes());
+	}
+	
+	typ(int > str) str func default (int inp) {
+		return str(inp.getBytes());
+	}
+}
+
+let x = 1 in x * x;
+
+{0..5} => map (n) {n+1};
+{0..10} ==> map (+1) ==> filter (>5);
+
+let square = (x) {x*x} in square(10);
+
+let square = (x) {x*x} in {0..15} ==> map (square);
+
+{a..z} => up => print;
+
+let (x, y) = (10, 5) in println(x, y); 
+
+let (x, y, z) = "abc" in println(x + y + z);
+
+let (x, _, y) = (1, 2, 3) in println(x + y);
+
+mac (NumExpr expr, "+++") func default () {
+	return eval(expr) + 3;
+}
+
+println(3+++);
+
+class HeyHey {
+	con int x, y, z;
+}
+
+void func someFunc(void func() a, int func(int) b) {
+	a();
+	println(b(1));
+}
+
+someFunc(a: void func () {println("hey")}, b: int func (int a) {return a});
+
+void func someEFunc(op(num) a) {
+	println(1 a 2);
+}
+
+println(${
+	int x = 0;
+	str a = "b";
+	return a + str(x);
+});
+
+ordered void func thonk (int a, int b) {
+
+}
+
+thonk(0, 1);
+
+named thonk(a: 0, b: 1);
+
+/*
+ *this function is thonk
+ */
+void func hmthonk () {
+
+}
+
+str smth = "hey";
+typeof(smth) = int;
+smth = 10;
+
+smth = auto("hey");
+
+uint(bits: 256) something = 1; 
+
+class Spec {
+	con(t) func (str smth) {
+		
+	}
+
+	con(n) func (str smthelse) {
+
+	}
+}
+
+Spec(smth: "hm") = Spec(smthelse: "thonk");
+
+for(int i = 0; sizeof(i) < 256; i++) {
+
+}
+
+float(fbits: 16, ibits: 16) = 1.0;
+
+for(float i = 0; sizeof(i) < 256; i++) {
+
+}
+
+println(1/3);
+println(d(1/3));
+println(f(1));
+
+println("hey HEY" ? "[a-z]");
+
+//whatever
+$("println('hey!')");
+
+str smth = "int";
+$(smth) x = 10;
+
+println(from a in {0..99} where a > 50 select score);
